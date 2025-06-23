@@ -25,6 +25,7 @@
     "concurrently": "^9.2.0"
   },
   "dependencies": {
-    "@llamaindex/ollama": "^0.1.11"
+    "@llamaindex/ollama": "^0.1.11",
+    "express": "^5.1.0"
   }
 }

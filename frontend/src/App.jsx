@@ -10,9 +10,9 @@ function App() {
   const [error, setError] = useState('');
 
   const enviarMensaje = async () => {
-    if (!mensaje) return;
+    if (!mensaje.trim() || cargando) return; // Bloquea si no hay mensaje o ya está cargando
 
-    setHistorial([...historial, { tipo: 'usuario', texto: mensaje }]);
+    setHistorial((prev) => [...prev, { tipo: 'usuario', texto: mensaje }]);
     setCargando(true);
     setError('');
 
@@ -38,8 +38,11 @@ function App() {
         onChange={(e) => setMensaje(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && enviarMensaje()}
         placeholder="Escribí tu pregunta..."
+        disabled={cargando} // deshabilita input mientras carga
       />
-      <button onClick={enviarMensaje}>Enviar</button>
+      <button onClick={enviarMensaje} disabled={cargando || !mensaje.trim()}>
+        {cargando ? 'Pensando...' : 'Enviar'}
+      </button>
     </div>
   );
 }
