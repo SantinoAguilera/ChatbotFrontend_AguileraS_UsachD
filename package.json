@@ -1,0 +1,30 @@
+{
+  "name": "chatbotfrontend_aguileras_usachd",
+  "version": "1.0.0",
+  "description": "\"# ChatbotFrontend_AguileraS_UsachD\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && node index.js",
+    "client": "cd frontend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantinoAguilera/ChatbotFrontend_AguileraS_UsachD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SantinoAguilera/ChatbotFrontend_AguileraS_UsachD/issues"
+  },
+  "homepage": "https://github.com/SantinoAguilera/ChatbotFrontend_AguileraS_UsachD#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "dependencies": {
+    "@llamaindex/ollama": "^0.1.11"
+  }
+}
